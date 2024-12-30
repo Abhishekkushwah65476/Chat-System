@@ -25,13 +25,11 @@ function Chat({socket, room, username}) {
             }
             try {
                 await socket.emit("send_message", messageData);
-                // Remove this line since we'll get the message back from the server
-                // setMessageList((list) => [...list, messageData]);
                 setCurrentmessage('');
             } catch (error) {
-                console.error("Error sending message:", error);
+                console.error("Error sending message:", error); 
             }
-        }
+        }           
     }
 
     useEffect(() => {
